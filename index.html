@@ -292,9 +292,46 @@
                     <a href="#recursos" class="text-gray-600 hover:text-impsys-blue nav-link">Recursos</a>
                     <a href="#contacto" class="text-gray-600 hover:text-impsys-blue nav-link">Contacto</a>
                 </div>
-                <button class="bg-impsys-blue text-white px-6 py-2 rounded-lg glow-button relative z-10">
-                    <span class="relative z-10">Consulta Gratuita</span>
-                </button>
+                                <!-- CTA + Selector de idioma a la derecha -->
+                <div class="flex items-center gap-3">
+                    <button class="bg-impsys-blue text-white px-6 py-2 rounded-lg shadow-sm hover:shadow-md hover:bg-impsys-dark transition">
+                        <span data-i18n="cta">Consulta Gratuita</span>
+                    </button>
+
+                    <!-- Selector de idioma mejorado -->
+                    <div class="relative" id="langDropdown">
+                        <button id="langButton" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" aria-label="Seleccionar idioma"
+                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
+                            <!-- Ícono de globo -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 9h19M2.5 15h19"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c3 4 3 14 0 18M12 3c-3 4-3 14 0 18"/>
+                            </svg>
+                            <span id="langLabel" class="font-medium">EN</span>
+                            <!-- Flecha -->
+                            <svg id="langArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-gray-500 transition-transform duration-200">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <!-- Menú de idiomas accesible y animado -->
+                        <div id="langMenu" role="menu" aria-label="Idiomas" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-xl border border-gray-100 overflow-hidden invisible opacity-0 scale-95 pointer-events-none transition-all duration-150 origin-top-right">
+                            <button role="menuitem" tabindex="-1" data-lang="ES" data-label="ES" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                <span class="flex items-center gap-2"><span>🇪🇸</span><span>Español</span></span>
+                                <span class="check hidden text-impsys-blue">✔</span>
+                            </button>
+                            <button role="menuitem" tabindex="-1" data-lang="EN" data-label="EN" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
+                                <span class="check hidden text-impsys-blue">✔</span>
+                            </button>
+                            <button role="menuitem" tabindex="-1" data-lang="PT" data-label="PT" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                <span class="flex items-center gap-2"><span>🇧🇷</span><span>Português</span></span>
+                                <span class="check hidden text-impsys-blue">✔</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -329,9 +366,23 @@
                 <div class="fade-in">
                     <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-100 hover-lift">
                         <div class="space-y-6">
-                            <div class="flex items-center space-x-4 interactive-card p-4 rounded-lg">
-                                <div class="w-12 h-12 bg-impsys-blue rounded-lg flex items-center justify-center pulse-dot">
+                        <!--
+                            <div class="flex items-center space-x-4 interactive-card p-4 rounded-lg hidden">
+                                <div class="w-12 h-12 bg-impsys-blue rounded-lg flex items-center justify-center pulse-dot ">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Desarrollo Ágil</h3>
+                                    <p class="text-gray-600">Metodologías probadas</p>
+                                </div>
+                            </div>
+                        -->
+
+                             <div class="flex items-center space-x-4 interactive-card p-4 rounded-lg">
+                                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center pulse-dot ">
+                                    <svg class="w-6 h-6 text-impsys-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                 </div>
@@ -391,7 +442,7 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-impsys-blue transition-colors">Desarrollo Web</h3>
                     <p class="text-gray-600 mb-6">Aplicaciones web modernas y responsivas que se adaptan a todos los dispositivos y navegadores.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-impsys-blue rounded-full mr-2"></span>React, Vue.js, Angular</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-impsys-blue rounded-full mr-2"></span>Sitios Web</li>
                         <li class="flex items-center"><span class="w-2 h-2 bg-impsys-blue rounded-full mr-2"></span>Progressive Web Apps</li>
                         <li class="flex items-center"><span class="w-2 h-2 bg-impsys-blue rounded-full mr-2"></span>E-commerce personalizado</li>
                     </ul>
@@ -455,7 +506,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 relative">
+    <section class="py-20 relative hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -534,7 +585,7 @@
     </section>
 
     <!-- Budget Calculator Section -->
-    <section class="py-20 bg-white/50 backdrop-blur-sm">
+    <section class="py-20 bg-white/50 backdrop-blur-sm hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -627,7 +678,7 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white/50 backdrop-blur-sm">
+    <section id="portfolio" class="py-20 bg-white/50 backdrop-blur-sm hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -1189,7 +1240,7 @@
                         
                         <div>
                             <label class="block text-white font-medium mb-2">Tipo de Proyecto *</label>
-                            <select required class="w-full p-3 bg-white/10 border border-white/30 rounded-lg text-white focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <select required class="w-full p-3 bg-white/10 border border-white/30 rounded-lg text-white focus:ring-2 focus:ring-impsys-blue focus:border-transparent focus:text-gray-900">
                                 <option value="">Selecciona una opción</option>
                                 <option value="web">Desarrollo Web</option>
                                 <option value="mobile">Aplicación Móvil</option>
@@ -1202,7 +1253,7 @@
                         
                         <div>
                             <label class="block text-white font-medium mb-2">Presupuesto Estimado</label>
-                            <select class="w-full p-3 bg-white/10 border border-white/30 rounded-lg text-white focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <select class="w-full p-3 bg-white/10 border border-white/30 rounded-lg text-white focus:ring-2 focus:ring-impsys-blue focus:border-transparent focus:text-gray-900">
                                 <option value="">Selecciona un rango</option>
                                 <option value="5k">€2,000 - €5,000</option>
                                 <option value="10k">€5,000 - €10,000</option>
@@ -1296,7 +1347,7 @@
     </section>
 
     <!-- Blog/Resources Section -->
-    <section id="recursos" class="py-20 relative">
+    <section id="recursos" class="py-20 relative hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -1968,4 +2019,120 @@
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967962bf31d100af',t:'MTc1MzkyNjAwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+    <script>
+        // Interactividad avanzada del selector de idioma (accesible y animada)
+        (() => {
+            const button = document.getElementById('langButton');
+            const arrow = document.getElementById('langArrow');
+            const menu = document.getElementById('langMenu');
+            const label = document.getElementById('langLabel');
+            const dropdown = document.getElementById('langDropdown');
+
+            // Diccionario de traducciones solo para la barra
+            const i18n = {
+                ES: { services: 'Servicios', portfolio: 'Portfolio', about: 'Nosotros', resources: 'Recursos', contact: 'Contacto', cta: 'Consulta Gratuita' },
+                EN: { services: 'Services',  portfolio: 'Portfolio', about: 'About',    resources: 'Resources', contact: 'Contact',  cta: 'Free Consultation' },
+                PT: { services: 'Serviços',  portfolio: 'Portfólio', about: 'Sobre nós', resources: 'Recursos', contact: 'Contato',   cta: 'Consulta Grátis' }
+            };
+
+            const setChecks = (code) => {
+                menu.querySelectorAll('.check').forEach(c => c.classList.add('hidden'));
+                const active = menu.querySelector(`button[data-label="${code}"] .check`);
+                if (active) active.classList.remove('hidden');
+            };
+
+            const applyLang = (code) => {
+                const texts = i18n[code] || i18n.EN;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (texts[key]) el.textContent = texts[key];
+                });
+                document.documentElement.lang = code.toLowerCase();
+                label.textContent = code;
+                setChecks(code);
+            };
+
+            const openMenu = () => {
+                menu.classList.remove('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
+                button.setAttribute('aria-expanded', 'true');
+                arrow.style.transform = 'rotate(180deg)';
+                // Enfocar el elemento activo para navegación con teclado
+                const active = menu.querySelector(`button[data-label="${label.textContent}"]`);
+                (active || menu.querySelector('button')).focus();
+            };
+            const closeMenu = () => {
+                menu.classList.add('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
+                button.setAttribute('aria-expanded', 'false');
+                arrow.style.transform = '';
+            };
+            const toggleMenu = () => {
+                if (menu.classList.contains('invisible')) openMenu();
+                else closeMenu();
+            };
+
+            // Abrir/cerrar al hacer clic en el botón
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Navegación con teclado dentro del menú
+            menu.addEventListener('keydown', (e) => {
+                const items = Array.from(menu.querySelectorAll('button[role="menuitem"]'));
+                const index = items.indexOf(document.activeElement);
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const next = items[(index + 1) % items.length];
+                    next.focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prev = items[(index - 1 + items.length) % items.length];
+                    prev.focus();
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    items[0].focus();
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    items[items.length - 1].focus();
+                } else if (e.key === 'Escape') {
+                    closeMenu();
+                    button.focus();
+                }
+            });
+
+            // Seleccionar idioma y cerrar + guardar preferencia
+            menu.querySelectorAll('button[data-lang]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const code = e.currentTarget.getAttribute('data-label') || 'EN';
+                    applyLang(code);
+                    try { localStorage.setItem('lang', code); } catch (_) {}
+                    closeMenu();
+                    button.focus();
+                });
+            });
+
+            // Cerrar al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) closeMenu();
+            });
+
+            // Cerrar con Escape global
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMenu();
+                // Abrir con Alt+L
+                if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 'l') {
+                    e.preventDefault();
+                    openMenu();
+                }
+            });
+
+            // Idioma por defecto: EN o el almacenado
+            const saved = (() => { try { return localStorage.getItem('lang'); } catch (_) { return null; } })();
+            applyLang(saved || 'EN');
+        })();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971d7e0c16a63729',t:'MTc1NTY0Njc4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
 </html>
