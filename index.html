@@ -4,200 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impsys - Desarrollo de Software para PyMEs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'impsys-blue': '#2563eb',
-                        'impsys-dark': '#1e40af',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { 
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            position: relative;
-        }
-        
-        /* Abstract background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(148, 163, 184, 0.02) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hover-lift {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .interactive-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .interactive-card:hover::before {
-            left: 100%;
-        }
-        
-        .glow-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .glow-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-        
-        .glow-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .pulse-dot {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #2563eb;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .stat-counter {
-            transition: all 0.3s ease;
-        }
-        
-        .stat-counter:hover {
-            transform: scale(1.1);
-            color: #2563eb;
-        }
-        
-        .service-icon {
-            transition: all 0.4s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: rotate(10deg) scale(1.1);
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-        }
-        
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .interactive-logo {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-        
-        .interactive-logo:hover {
-            transform: rotate(5deg) scale(1.1);
-            filter: drop-shadow(0 8px 25px rgba(37, 99, 235, 0.4));
-        }
-        
-        .interactive-logo svg {
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-logo:hover svg {
-            animation: logoGlow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes logoGlow {
-            0% { filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.5)); }
-            100% { filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.8)); }
-        }
-    </style>
+    <link rel="stylesheet" href="css/tailwing3.css" />
+    <link rel="stylesheet" href="css/general.css" />
 </head>
 <body>
     <!-- Header -->
@@ -911,10 +719,22 @@
                                 Solicitar Consulta Gratuita
                             </button>
                         </div>
+                        <div class="flex justify-center my-2 hidden" id="formSending">
+                            <div role="status">
+                                <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-400 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                                </svg>
+                            </div>
+                        </div>
                         <div class="text-center text-sm text-green-500 bg-green-100 p-3 rounded-lg hidden" id="formSuccessMessage">
                             ¡Gracias por contactarnos! Te responderemos pronto.
                         </div>
-                        
+                        <div class="text-center text-sm text-red-800 bg-red-100 p-3 rounded-lg hidden" id="formErrorMessage">
+                            Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.
+                            <br>
+                            Tambien puedes comunicarte con nosotros directamente a nuestro correo o vía WhatsApp.
+                        </div>
                         <p class="text-xs text-gray-500 text-center">
                             Al enviar este formulario, aceptas que te contactemos para discutir tu proyecto. Respetamos tu privacidad.
                         </p>
@@ -1157,6 +977,6 @@
 <script type="text/javascript" src="js/general-functionalities.js"></script>
 <script type="text/javascript" src="js/languague-change.js"></script>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript" src="js/emailjs/email.min.js"></script>
 <script type="text/javascript" src="js/modals.js"></script>
 </html>

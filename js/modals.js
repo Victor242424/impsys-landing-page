@@ -33,55 +33,46 @@
 
     // Project modal close handlers
     document.getElementById('closeProjectModal').addEventListener('click', function() {
-        document.getElementById('projectModal').classList.add('hidden');
-        document.body.style.overflow = 'auto';
+        closeModal('projectModal');
     });
 
     document.getElementById('cancelProject').addEventListener('click', function() {
-        document.getElementById('projectModal').classList.add('hidden');
-        document.body.style.overflow = 'auto';
+        closeModal('projectModal');
     });
 
     // Close project modal when clicking outside
     document.getElementById('projectModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+        if (e.target.id === this.id || this.firstElementChild === e.target) {
+            closeModal(this.id);
         }
     });
 
        // Project modal form handler
     document.getElementById('projectForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        const formData = new FormData(this);
-        const projectType = formData.get('projectType') || 'proyecto personalizado';
-        
-      /*   alert(
-            `¡Excelente! Hemos recibido tu solicitud para un ${projectType}. 
-            Te contactaremos en las próximas 24 horas para agendar tu consulta gratuita. 
-            En una implementación real, esto enviaría los datos a nuestro CRM.`
-        ); */
-
-        const formObject = this;
-        sendMail(formData, formObject);
-        
-        // Close modal and reset form
-        document.getElementById('projectModal').classList.add('hidden');
-        document.body.style.overflow = 'auto';
-        setTimeout(() => {
-            document.getElementById('formSuccessMessage').classList.remove('hidden');
-        }, 500);
-        setTimeout(() => {
-            document.getElementById('formSuccessMessage').classList.add('hidden');
-        }, 5000);
-        this.reset();
+        document.getElementById('formSending').classList.remove('hidden')
+        sendMail(this);
     });
 
     function sendMail(formObject) {
-        emailjs.init("kkD3aEMiOBAl7qspV"); // lo obtienes en EmailJS
+        emailjs.init("kkD3aEMiOBAl7qspV"); 
         emailjs.sendForm('service_1txv419', 'template_b1s5hyy', formObject)
-        .then(() => alert('Correo enviado con éxito'))
-        .catch((err) => alert('Error: ' + JSON.stringify(err)));
+        .then(() => {
+            document.getElementById('formSending').classList.add('hidden')
+            document.getElementById('formSuccessMessage').classList.remove('hidden');
+            setTimeout(() =>  document.getElementById('formSuccessMessage').classList.add('hidden')
+            , 5000);
+            document.body.style.overflow = 'auto';
+            //this.reset();
+        })
+        .catch((err) => {
+            document.getElementById('formSending').classList.add('hidden')
+            document.getElementById('formErrorMessage').classList.remove('hidden');
+        });
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+        document.body.style.overflow = 'auto';
     }
 })();
