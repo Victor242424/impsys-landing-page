@@ -5,7 +5,7 @@
             block: 'start'
         });
     }
-    
+
     // Button click handlers for other buttons
     document.querySelectorAll('button').forEach(button => {
         if (!button.id && !button.closest('form') && !button.closest('article')) {
@@ -31,21 +31,6 @@
         }
     });
 
-    // Project modal form handler
-    document.getElementById('projectForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const projectType = formData.get('projectType') || 'proyecto personalizado';
-        
-        alert(`¡Excelente! Hemos recibido tu solicitud para un ${projectType}. Te contactaremos en las próximas 24 horas para agendar tu consulta gratuita. En una implementación real, esto enviaría los datos a nuestro CRM.`);
-        
-        // Close modal and reset form
-        document.getElementById('projectModal').classList.add('hidden');
-        document.body.style.overflow = 'auto';
-        this.reset();
-    });
-
     // Project modal close handlers
     document.getElementById('closeProjectModal').addEventListener('click', function() {
         document.getElementById('projectModal').classList.add('hidden');
@@ -64,4 +49,39 @@
             document.body.style.overflow = 'auto';
         }
     });
+
+       // Project modal form handler
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const projectType = formData.get('projectType') || 'proyecto personalizado';
+        
+      /*   alert(
+            `¡Excelente! Hemos recibido tu solicitud para un ${projectType}. 
+            Te contactaremos en las próximas 24 horas para agendar tu consulta gratuita. 
+            En una implementación real, esto enviaría los datos a nuestro CRM.`
+        ); */
+
+        const formObject = this;
+        sendMail(formData, formObject);
+        
+        // Close modal and reset form
+        document.getElementById('projectModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        setTimeout(() => {
+            document.getElementById('formSuccessMessage').classList.remove('hidden');
+        }, 500);
+        setTimeout(() => {
+            document.getElementById('formSuccessMessage').classList.add('hidden');
+        }, 5000);
+        this.reset();
+    });
+
+    function sendMail(formObject) {
+        emailjs.init("kkD3aEMiOBAl7qspV"); // lo obtienes en EmailJS
+        emailjs.sendForm('service_1txv419', 'template_b1s5hyy', formObject)
+        .then(() => alert('Correo enviado con éxito'))
+        .catch((err) => alert('Error: ' + JSON.stringify(err)));
+    }
 })();
