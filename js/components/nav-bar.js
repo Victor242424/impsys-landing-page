@@ -4,6 +4,7 @@
         const children = menu.children;
         menu.classList.toggle('max-h-0');
         menu.classList.toggle('opacity-0');
+        menu.classList.toggle('mb-4');
         const langDropdown = document.getElementById('langDropdown');
         langDropdown.classList.toggle('my-4');
         for (let i = 0; i < children.length; i++) {
