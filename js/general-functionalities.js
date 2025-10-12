@@ -32,29 +32,6 @@
             observer.observe(section);
         });
         
-        // WhatsApp Button Functionality
-        const whatsappBtn = document.getElementById('whatsappBtn');
-        const whatsappTooltip = document.getElementById('whatsappTooltip');
-        
-        whatsappBtn.addEventListener('mouseenter', function() {
-            whatsappTooltip.style.opacity = '1';
-            whatsappTooltip.style.transform = 'translateY(0)';
-        });
-        
-        whatsappBtn.addEventListener('mouseleave', function() {
-            whatsappTooltip.style.opacity = '0';
-            whatsappTooltip.style.transform = 'translateY(8px)';
-        });
-        
-        whatsappBtn.addEventListener('click', function() {
-            // In a real implementation, this would open WhatsApp with a pre-filled message
-            const message = encodeURIComponent('¡Hola! Me interesa conocer más sobre los servicios de Impsys para mi empresa.');
-            const whatsappUrl = `https://wa.me/5541988600909?text=${message}`;
-            
-            alert('En una implementación real, esto abriría WhatsApp con un mensaje predefinido. URL: ' + whatsappUrl);
-        });
-        
-       
         // Interactive counter animation
         const counters = document.querySelectorAll('.stat-counter');
         counters.forEach(counter => {
@@ -87,8 +64,6 @@
                 this.style.transform = 'translateX(0)';
             });
         });
-
-       
 
         // Close modal functionality
         document.getElementById('closeModal').addEventListener('click', function() {

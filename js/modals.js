@@ -75,4 +75,5 @@
         document.getElementById(modalId).classList.add('hidden');
         document.body.style.overflow = 'auto';
     }
+    
 })();
