@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impsys - Desarrollo de Software para PyMEs</title>
-    <link rel="stylesheet" href="css/tailwing3.css" />
-    <link rel="stylesheet" href="css/general.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'impsys-blue': '#2563eb',
+                        'impsys-dark': '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+<!--     <link rel="stylesheet" href="css/tailwing3.css" /> -->
+    <link rel="stylesheet" href="css/general.css" /> 
 </head>
 <body>
     <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
+            <div class="flex justify-between items-center py-4 flex-col md:flex-row gap-4 md:gap-0">
                 <div class="flex items-center">
                     <div class="mr-3 interactive-logo">
                         <!-- <svg width="40" height="40" viewBox="0 0 40 40" class="drop-shadow-lg"> -->
@@ -93,14 +106,31 @@
                         <span class="text-xs text-gray-500 font-medium tracking-wider uppercase sm:inline">Implicit System</span>
                     </div>
                 </div>
-                <div class="md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-600 hover:text-impsys-blue nav-link">Inicio</a>
-                    <a href="#servicios" class="text-gray-600 hover:text-impsys-blue nav-link">Servicios</a>
-                    <a href="#contacto" class="text-gray-600 hover:text-impsys-blue nav-link">Contacto</a>
+
+                <div id="menuMobileButton">
+                    <button type="button" 
+                    class="bg-impsys-blue text-white p-4 rounded-lg text-lg font-semibold 
+                    glow-button relative overflow-hidden group sm:hidden">
+                        <svg class="w-6 h-6 mx-auto" aria-hidden="true" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
                 </div>
-                                <!-- Selector de idioma a la derecha -->
-                <div class="flex items-center gap-3">
-                    <button class="bg-impsys-blue text-white px-6 py-2 rounded-lg text-lg font-semibold glow-button relative overflow-hidden group">
+                <div id="navBarMenu" class="hidden block sm:flex sm:flex-row sm:space-x-8 transition-all">
+                    <div class="border-gray-300 border-b p-2 text-center sm:border-b-0 sm:p-0 sm:text-left">
+                        <a href="#inicio" class="text-gray-600 hover:text-impsys-blue nav-link">Inicio</a>
+                    </div>
+                    <div class="border-gray-300 border-b p-2 text-center  sm:border-b-0 sm:p-0 sm:text-left">
+                        <a href="#servicios" class="text-gray-600 hover:text-impsys-blue nav-link">Servicios</a>
+                    </div>
+                    <div class="p-2 text-center sm:p-0">
+                        <a href="#contacto" class="text-gray-600 hover:text-impsys-blue nav-link">Contacto</a>
+                    </div>
+                </div>
+
+                <!-- Selector de idioma a la derecha -->
+                <div class="flex items-center gap-3 ">
+                    <button class="bg-impsys-blue text-white px-6 py-2 rounded-lg text-lg font-semibold glow-button relative overflow-hidden group hidden lg:inline-block">
                         <span class="relative z-10">Consulta Gratuita</span>
                     </button>
 
@@ -146,7 +176,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative py-20 lg:py-32 overflow-hidden">
+    <section id="inicio" class="relative py-10 lg:py-20 lg:py-32 overflow-hidden">
         <!-- Floating geometric shapes -->
         <div class="absolute top-20 left-10 w-20 h-20 bg-impsys-blue/10 rounded-full floating-element"></div>
         <div class="absolute top-40 right-20 w-16 h-16 bg-impsys-blue/5 rounded-lg floating-element" style="animation-delay: -2s;"></div>
@@ -155,7 +185,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 text-center lg:text-left">
                         Software que
                         <span class="text-gradient">impulsa</span>
                         tu negocio
@@ -163,7 +193,7 @@
                     <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                         Desarrollamos soluciones tecnológicas personalizadas para pequeñas y medianas empresas en Brasil y España. Transformamos ideas en sistemas eficientes y escalables.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <button class="bg-impsys-blue text-white px-8 py-4 rounded-lg text-lg font-semibold glow-button relative overflow-hidden group">
                             <span class="relative z-10">Comenzar Proyecto</span>
                         </button>
@@ -172,7 +202,7 @@
                 </div>
                 <div class="fade-in">
                     <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-100">
-                        <div class="space-y-6">
+                        <div class="space-y-6 grid justify-center lg:justify-start lg:block">
                             <div class="flex items-center space-x-4  p-4 rounded-lg">
                                 <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-impsys-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,12 +257,12 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="service-card bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-100 group">
-                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6 mx-auto">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>                    
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Desarrollo Web</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Desarrollo Web</h3>
                     <p class="text-gray-600 mb-6">Creamos aplicaciones web modernas y responsivas que transmiten confianza y ofrecen la mejor experiencia en cualquier dispositivo.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li class="flex"><div class="min-w-2 h-2 bg-impsys-blue rounded-full mr-2 mt-2"></div><div>Sitios Web Corporativos con identidad propia</div></li>
@@ -242,12 +272,12 @@
                 </div>
                 
                 <div class="service-card bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-100 group">
-                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6 mx-auto">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Apps Móviles</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Apps Móviles</h3>
                     <p class="text-gray-600 mb-6">Diseñamos apps nativas e híbridas para iOS y Android que se adaptan a tu negocio y a las necesidades de tus usuarios.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li class="flex"><div class="min-w-2 h-2 bg-impsys-blue rounded-full mr-2 mt-2"></div><div>Integración con APIs y servicios externos</div></li>
@@ -257,12 +287,12 @@
                 </div>
                 
                 <div class="service-card bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-100 group">
-                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6 mx-auto">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Sistemas ERP</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Sistemas ERP</h3>
                     <p class="text-gray-600 mb-6">Impulsa la productividad de tu empresa con soluciones que integran todas las áreas de tu negocio en una sola plataforma.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li class="flex"><div class="min-w-2 h-2 bg-impsys-blue rounded-full mr-2 mt-2"></div><div>Gestión inteligente de inventarios</div></li>
@@ -272,14 +302,14 @@
                 </div>
 
                 <div class="service-card bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-100 group">
-                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6 mx-auto">
                     <svg class="w-8 h-8 text-white"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Icono de burbuja de diálogo">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 5h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-7l-4 3v-3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z" />
                     </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Consultoría IT</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Consultoría IT</h3>
                     <p class="text-gray-600 mb-6">Asesoría estratégica para acompañar a tu empresa en la toma de decisiones tecnológicas clave.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li class="flex"><div class="min-w-2 h-2 bg-impsys-blue rounded-full mr-2 mt-2"></div><div>Evaluación de infraestructura y procesos</div></li>
@@ -289,13 +319,13 @@
                 </div>
 
                 <div class="service-card bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-100 group">
-                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-impsys-blue rounded-lg flex items-center justify-center mb-6 mx-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <circle stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="12" cy="12" r="3"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09c.7 0 1.32-.4 1.51-1a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06c.49.49 1.2.64 1.82.33h.06a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .7.4 1.32 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.06c.19.6.81 1 1.51 1H21a2 2 0 0 1 0 4h-.09c-.7 0-1.32.4-1.51 1z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Automatización de Procesos</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 text-center">Automatización de Procesos</h3>
                     <p class="text-gray-600 mb-6">Desarrollo de soluciones a medida que permiten aumentar la eficiencia operativa y reducir costos.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li class="flex"><div class="min-w-2 h-2 bg-impsys-blue rounded-full mr-2 mt-2"></div><div>Integración de sistemas internos</div></li>
@@ -745,11 +775,11 @@
     </div>
 
     <!-- About Section -->
-    <section id="nosotros" class="py-20 relative">
+    <section id="nosotros" class="py-10 lg:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center lg:text-left">
                         ¿Por qué elegir <span class="text-gradient">Impsys</span>?
                     </h2>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -776,10 +806,10 @@
                     <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                     <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6">Proceso de Trabajo</h3>
-                        <div class="space-y-6">
+                        <h3 class="text-2xl font-bold mb-6 text-center lg:text-left">Proceso de Trabajo</h3>
+                        <div class="space-y-6 grid justify-center align-center lg:block">
                             <div class="flex items-center space-x-4 p-3 rounded-lg transition-all duration-300">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center pulse-dot">
+                                <div class="min-w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center pulse-dot">
                                     <span class="text-sm font-bold">1</span>
                                 </div>
                                 <div>
@@ -788,7 +818,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4 p-3 rounded-lg transition-all duration-300">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <div class="min-w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                     <span class="text-sm font-bold">2</span>
                                 </div>
                                 <div>
@@ -797,7 +827,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4 p-3 rounded-lg transition-all duration-300">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <div class="min-w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                     <span class="text-sm font-bold">3</span>
                                 </div>
                                 <div>
@@ -806,7 +836,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4 p-3 rounded-lg transition-all duration-300">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <div class="min-w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                                     <span class="text-sm font-bold">4</span>
                                 </div>
                                 <div>
@@ -951,7 +981,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-4">Contacto</h3>
+                    <h3 class="font-semibold text-gray-900 mb-4 text-center sm:text-left">Contacto</h3>
                     <ul class="space-y-2 text-gray-600">
                         <li><span class="whitespace-nowrap">📧 victor.rivas.development@gmail.com</span></li>
                         <li>📍 Curitiba, Brasil</li>
@@ -970,4 +1000,5 @@
 
 <script type="text/javascript" src="js/emailjs/email.min.js"></script>
 <script type="text/javascript" src="js/modals.js"></script>
+<script type="text/javascript" src="js/components/navBar.js"></script>
 </html>
