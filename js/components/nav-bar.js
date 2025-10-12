@@ -1,6 +1,6 @@
 (() => {
     document.getElementById('menuMobileButton').addEventListener('click', function() {
-        const menu = document.getElementById('navBarMenu'); 
+        const menu = document.getElementById('navBarMobileMenu'); 
         const children = menu.children;
         menu.classList.toggle('max-h-0');
         menu.classList.toggle('opacity-0');
