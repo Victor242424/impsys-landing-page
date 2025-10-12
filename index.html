@@ -74,7 +74,7 @@
                     </button>
 
                     <!-- Selector de idioma mejorado -->
-                    <div class="relative" id="langDropdown">
+                    <div class="relative hidden sm:block" id="langDropdown">
                         <button id="langButton" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" aria-label="Seleccionar idioma"
                                 class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
                             <!-- Ícono de globo -->
@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div id="navBarMobileMenu" class="block sm:hidden transition-all max-h-0
-            opacity-0 overflow-hidden">
+            opacity-0">
                 <div class="border-gray-200 border-b p-2 text-center 
                 delay-50 transition-all duration-300 transform translate-y-[-1rem]">
                     <a href="#inicio" class="block text-gray-600 hover:text-impsys-blue nav-link">Inicio</a>
@@ -122,11 +122,53 @@
                 delay-50 transition-all duration-300 transform translate-y-[-1rem]">
                     <a href="#servicios" class="block text-gray-600 hover:text-impsys-blue nav-link">Servicios</a>
                 </div>
-                <div class="p-2 text-center
+                <div class="border-gray-200 border-b p-2 text-center
                 delay-50 transition-all duration-300 transform translate-y-[-1rem]">
                     <a href="#contacto" class="block text-gray-600 hover:text-impsys-blue nav-link">Contacto</a>
                 </div>
+                <div class="m-6 text-center p-2 overflow-visible
+                    delay-50 transition-all duration-300 transform translate-y-[-1rem] ">
+                    <div class="relative inline-block" id="mobileLangDropdown">
+                        <button id="mobileLangButton" aria-haspopup="true" aria-expanded="false" aria-controls="mobileLangMenu" aria-label="Seleccionar idioma"
+                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
+                            <!-- Ícono de globo -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 9h19M2.5 15h19"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c3 4 3 14 0 18M12 3c-3 4-3 14 0 18"/>
+                            </svg>
+                            <span id="langLabel" class="font-medium">ES</span>
+                            <!-- Flecha -->
+                            <svg id="mobileLangArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-gray-500 transition-transform duration-200">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <!-- Menú de idiomas accesible y animado -->
+                        <div id="mobileLangMenu" role="menu"  class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-xl border border-gray-100 overflow-hidden invisible opacity-0 scale-95 pointer-events-none transition-all duration-150 origin-top-right z-10">
+                                <a href="/">
+                                <button role="menuitem" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                    <span class="flex items-center gap-2"><span>🇪🇸</span><span>Español</span></span>
+                                    <span class="check text-impsys-blue">✔</span>
+                                </button>
+                            </a>
+                            <a href="EN.html">
+                                <button role="menuitem" tabindex="-1" data-lang="EN" data-label="EN" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                    <span class="flex items-center gap-2"><span>🇺🇸</span><span>English</span></span>
+                                </button>
+                            </a>
+                            <a href="PT.html">
+                                <button role="menuitem" tabindex="-1" data-lang="PT" data-label="PT" class="w-full text-left px-4 py-2 hover:bg-impsys-blue/10 focus:bg-impsys-blue/15 transition-colors duration-150 flex items-center gap-2 justify-between">
+                                    <span class="flex items-center gap-2"><span>🇧🇷</span><span>Português</span></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
             </div>
+            
         </nav>
     </header>
 
