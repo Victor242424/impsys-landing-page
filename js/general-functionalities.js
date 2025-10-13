@@ -130,11 +130,8 @@
     const smMediaQuery = window.matchMedia('(max-width: 640px)');
 
     function changeLanguagueMenuIfSm() {
-        console.log('Ejecutando en tamaño SM');
         const cloneMenu = menu.cloneNode(true);
-        console.log(cloneMenu);
         const parent = mobileMenu.parentNode;
-        console.log(parent);
         parent.replaceChild(cloneMenu, mobileMenu);
         cloneMenu.id = 'mobileLangMenu';
         mobileMenu = document.getElementById('mobileLangMenu')
@@ -142,10 +139,8 @@
 
     // Configurar el listener
     smMediaQuery.addEventListener('change', (e) => {
-        console.log('Cambio de media query:', e.matches);
         if (e.matches) changeLanguagueMenuIfSm();
     });
-    console.log('Cambio de media  raw:', smMediaQuery);
     // Ejecutar inmediatamente si coincide
     if (smMediaQuery.matches) changeLanguagueMenuIfSm();
 
