@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://victor242424.github.io/impsys-landing-page/sitemap.xml
