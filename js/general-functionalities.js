@@ -102,7 +102,6 @@
                 children[i].classList.toggle('translate-y-[-1rem]');
             }
         }, 10);
-       
     });
 })();
 
@@ -156,14 +155,6 @@
     const mobileDropdown = document.getElementById('mobileLangDropdown');
 
     const openMenu = (menu, button, arrow) => {
-        console.log('Abriendo menú:', menu.id);
-        menu.removeAttribute('hidden');
-        if(menu.id === 'mobileLangMenu') {
-            menu.classList.remove('z-index-[-1]');
-            menu.classList.add('z-index-[1]');
-            menu.classList.toggle('hidden');
-            console.log('Menú móvil clases:', menu.className);
-        }
         menu.classList.remove('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
         button.setAttribute('aria-expanded', 'true');
         arrow.style.transform = 'rotate(180deg)';
@@ -171,11 +162,6 @@
 
     const closeMenu = (menu, button, arrow) => {
         menu.classList.add('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
-        if(menu.id === 'mobileLangMenu') {
-            menu.classList.remove('z-index-[1]');
-            menu.classList.add('z-index-[-1]');
-            menu.classList.toggle('hidden');
-        }
         button.setAttribute('aria-expanded', 'false');
         arrow.style.transform = '';
     };
