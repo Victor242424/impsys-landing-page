@@ -126,8 +126,7 @@
     let mobileMenu = document.getElementById('mobileLangMenu');
 
     /*     Clona menu de lengua cuando es mobil     */
-    // Breakpoint para sm (640px - 767px)
-    const smMediaQuery = window.matchMedia('(max-width: 640px)');
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
 
     function changeLanguagueMenuIfSm() {
         const cloneMenu = menu.cloneNode(true);
@@ -135,14 +134,15 @@
         parent.replaceChild(cloneMenu, mobileMenu);
         cloneMenu.id = 'mobileLangMenu';
         mobileMenu = document.getElementById('mobileLangMenu')
+        console.log('Menu de lenguaje clonado para móvil');
     }
 
     // Configurar el listener
-    smMediaQuery.addEventListener('change', (e) => {
+    mediaQuery.addEventListener('change', (e) => {
         if (e.matches) changeLanguagueMenuIfSm();
     });
     // Ejecutar inmediatamente si coincide
-    if (smMediaQuery.matches) changeLanguagueMenuIfSm();
+    if (mediaQuery.matches) changeLanguagueMenuIfSm();
 
 
 
@@ -183,6 +183,7 @@
     // Abrir/cerrar al hacer clic en el botón
     mobileButton.addEventListener('click', (e) => {
         e.stopPropagation();
+        console.log('Clic en botón móvil');
         toggleMenu(mobileMenu, mobileButton, mobileArrow);
     });
 
