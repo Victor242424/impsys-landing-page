@@ -205,17 +205,22 @@
     document.querySelectorAll('button').forEach(button => {
         if (!button.id && !button.closest('form') && !button.closest('article')) {
             button.addEventListener('click', function() {
-                if (this.textContent.includes('Consulta') || this.textContent.includes('Comenzar')) {
-                    // Open project modal
-                    document.getElementById('projectModal').classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                } else if (this.textContent.includes('Portfolio')) {
+                console.log(this.id)
+                if (this.textContent.includes('Portfolio')) {
                     scrollToPortfolio();
-                } else if (this.textContent.includes('Recursos')) {
-                    alert('En una implementación real, esto mostraría una página completa con todos los recursos disponibles.');
                 }
             });
         }
+    });
+
+    document.getElementById('navCallToAction').addEventListener('click', function(e) {
+        document.getElementById('projectModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+
+      document.getElementById('heroCallToAction').addEventListener('click', function(e) {
+        document.getElementById('projectModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     });
 
     // Project request modal functionality - using event delegation for dynamically added buttons
