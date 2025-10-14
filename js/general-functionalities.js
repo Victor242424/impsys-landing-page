@@ -101,6 +101,19 @@
     });
 })();
 
+/* Close mobile menu on child click */
+
+(() => {
+    const parentDiv = document.getElementById('navBarMobileMenu');
+    parentDiv.addEventListener('click', function(e) {
+        if (e.target.parentElement.parentElement === parentDiv) {
+            console.log('Hijo clickeado:', e.target);
+            console.log('Contenido:', e.target.textContent);
+            document.getElementById('menuMobileButton').click();
+        }
+    });
+})();
+
 
 /* WhatsApp Button Animation */
 
@@ -476,3 +489,4 @@
         document.body.style.overflow = 'hidden';
     }
 })();
+
