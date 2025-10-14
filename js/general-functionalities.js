@@ -90,14 +90,19 @@
     document.getElementById('menuMobileButton').addEventListener('click', function() {
         const menu = document.getElementById('navBarMobileMenu'); 
         const children = menu.children;
-        menu.classList.toggle('max-h-0');
-        menu.classList.toggle('opacity-0');
-        menu.classList.toggle('mb-4');
-        const langDropdown = document.getElementById('langDropdown');
-        langDropdown.classList.toggle('my-4');
-        for (let i = 0; i < children.length; i++) {
-            children[i].classList.toggle('translate-y-[-1rem]');
-        }
+        menu.classList.toggle('hidden');
+        setTimeout(() => {
+            console.log('Menú móvil clases:', menu.className);
+            menu.classList.toggle('max-h-0');
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('mb-4');
+            const langDropdown = document.getElementById('langDropdown');
+            langDropdown.classList.toggle('my-4');
+            for (let i = 0; i < children.length; i++) {
+                children[i].classList.toggle('translate-y-[-1rem]');
+            }
+        }, 10);
+       
     });
 })();
 
@@ -135,31 +140,11 @@
 
 /*  Interactividad avanzada del selector de idioma (accesible y animada) */
 (() => {
-    const menu = document.getElementById('langMenu');
-    let mobileMenu = document.getElementById('mobileLangMenu');
-
-    /*     Clona menu de lengua cuando es mobil     */
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-    function changeLanguagueMenuIfSm() {
-        const cloneMenu = menu.cloneNode(true);
-        const parent = mobileMenu.parentNode;
-        parent.replaceChild(cloneMenu, mobileMenu);
-        cloneMenu.id = 'mobileLangMenu';
-        mobileMenu = document.getElementById('mobileLangMenu')
-        console.log('Menu de lenguaje clonado para móvil');
-    }
-
-    // Configurar el listener
-    mediaQuery.addEventListener('change', (e) => {
-        if (e.matches) changeLanguagueMenuIfSm();
-    });
-    // Ejecutar inmediatamente si coincide
-    if (mediaQuery.matches) changeLanguagueMenuIfSm();
-
-
 
     /*     Eventos de menu de lenguaje     */
+
+    const menu = document.getElementById('langMenu');
+    const mobileMenu = document.getElementById('mobileLangMenu');
 
     const button = document.getElementById('langButton');
     const mobileButton = document.getElementById('mobileLangButton');
@@ -171,6 +156,14 @@
     const mobileDropdown = document.getElementById('mobileLangDropdown');
 
     const openMenu = (menu, button, arrow) => {
+        console.log('Abriendo menú:', menu.id);
+        menu.removeAttribute('hidden');
+        if(menu.id === 'mobileLangMenu') {
+            menu.classList.remove('z-index-[-1]');
+            menu.classList.add('z-index-[1]');
+            menu.classList.toggle('hidden');
+            console.log('Menú móvil clases:', menu.className);
+        }
         menu.classList.remove('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
         button.setAttribute('aria-expanded', 'true');
         arrow.style.transform = 'rotate(180deg)';
@@ -178,6 +171,11 @@
 
     const closeMenu = (menu, button, arrow) => {
         menu.classList.add('invisible', 'opacity-0', 'scale-95', 'pointer-events-none');
+        if(menu.id === 'mobileLangMenu') {
+            menu.classList.remove('z-index-[1]');
+            menu.classList.add('z-index-[-1]');
+            menu.classList.toggle('hidden');
+        }
         button.setAttribute('aria-expanded', 'false');
         arrow.style.transform = '';
     };
@@ -196,7 +194,6 @@
     // Abrir/cerrar al hacer clic en el botón
     mobileButton.addEventListener('click', (e) => {
         e.stopPropagation();
-        console.log('Clic en botón móvil');
         toggleMenu(mobileMenu, mobileButton, mobileArrow);
     });
 
