@@ -832,7 +832,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-0 sm:gap-8">
                 <div class="md:col-span-2">
-                    <div class="flex items-center mb-4">
+                    <div class="flex items-center mb-4 w-fit md:w-full mx-auto md:mx-0">
                         <img class="h-12 min-h-12 mr-1" src = "logo.svg" loading="lazy" alt="imagotipo del ingeniero de software Victor Rivas"
                         class="drop-shadow-lg"/>
                         <div class="flex flex-col">
@@ -840,12 +840,18 @@
                             <span class="text-xs text-gray-500 font-medium text-center tracking-wider uppercase sm:inline">Ingeniero de Software</span>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6 max-w-md">
-                        Desarrollamos soluciones tecnológicas personalizadas para emprendedores, autónomos y pymes que buscan transformar ideas en sistemas eficientes y escalables. 
-                    </p>
-                    <p class="text-gray-600 mb-6 max-w-md">
-                        Trabajamos principalmente con clientes en Brasil y España.
-                    </p>
+                    <div>
+                        <p class="text-gray-600 mb-6 max-w-md mx-auto md:mx-0">
+                            Desarrollamos soluciones tecnológicas personalizadas para emprendedores, autónomos y pymes que buscan transformar ideas en sistemas eficientes y escalables. 
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 mb-6 max-w-md mx-auto md:mx-0">
+                            Trabajamos principalmente con clientes en Brasil y España.
+                        </p>
+                    </div>
+                    
+                    
                     <div class="hidden space-x-4">
                         <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white transition-all duration-300 cursor-pointer hover-lift">
                             <svg class="w-8 h-8 fill-current"   viewBox="0 0 640 640" role="img" title="Instagram">
@@ -861,21 +867,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
-                    <h3 class="font-semibold text-gray-900 mb-4">Secciones</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#inicio" class="hover:text-impsys-blue transition-colors nav-link">Inicio</a></li>
-                        <li><a href="#servicios" class="hover:text-impsys-blue transition-colors nav-link">Servicios</a></li>
-                        <li><a href="#nosotros" class="hover:text-impsys-blue transition-colors nav-link">Acerca de</a></li>
-                        <li><a href="#contacto" class="hover:text-impsys-blue transition-colors nav-link">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-4 text-center sm:text-left">Contacto</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><span class="whitespace-nowrap">📧 victor.rivas.development@gmail.com</span></li>
-                        <li>📍 Curitiba, Brasil</li>
-                    </ul>
+                <div class="flex justify-between w-full md:col-span-2 mt-8 md:mt-0 grid grid-cols-2 gap-8 sm:gap-16">
+                    <div class="text-center md:text-left">
+                        <h3 class="font-semibold text-gray-900 mb-4">Secciones</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#inicio" class="hover:text-impsys-blue transition-colors nav-link">Inicio</a></li>
+                            <li><a href="#servicios" class="hover:text-impsys-blue transition-colors nav-link">Servicios</a></li>
+                            <li><a href="#nosotros" class="hover:text-impsys-blue transition-colors nav-link">Acerca de</a></li>
+                            <li><a href="#contacto" class="hover:text-impsys-blue transition-colors nav-link">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-4 text-center md:text-left">Contacto</h3>
+                        <ul class="space-y-2 text-gray-600 text-center md:text-left">
+                            <li><span class="break-all">📧 victor.rivas.development@gmail.com</span></li>
+                            <li>📍 Curitiba, Brasil</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
