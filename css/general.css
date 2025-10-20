@@ -31,6 +31,22 @@
             pointer-events: none;
             z-index: -1;
         }
+
+        :is(.dark) body::before {
+            background-color: #0B1120;
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(17, 24, 39, 30) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(17, 24, 39, 30) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(31, 41, 55, 30) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
         
         .fade-in {
             animation: fadeIn 0.8s ease-in-out;
