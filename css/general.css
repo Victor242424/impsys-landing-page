@@ -182,6 +182,13 @@
             background-clip: text;
         }
         
+        :is(.dark) .text-gradient{
+            background: #2563eb;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
         .interactive-logo {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
