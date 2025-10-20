@@ -606,43 +606,43 @@
     <!-- Project Request Modal -->
     <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
         <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-white dark:bg-dark-bg rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div class="p-8">
                     <div class="relative h-4">
                         <button id="closeProjectModal" class="text-gray-500 hover:text-gray-700 text-2xl absolute right-0 top-0">&times;</button>
                     </div>
                     <div class="mb-6 text-center">
                         <p class="text-impsys-blue text-sm">La consulta es gratuita</p>
-                        <h2 class="text-3xl font-bold text-gray-900 my-2">Datos del Proyecto</h2>
-                        <p class="text-gray-600">Define tu proyecto con claridad antes de invertir</p>
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-dark-text my-2">Datos del Proyecto</h2>
+                        <p class="text-gray-600 dark:text-dark-muted">Define tu proyecto con claridad antes de invertir</p>
                     </div>
                     
                     <form id="projectForm" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Nombre *</label>
-                                <input name="name" type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Tu nombre completo">
+                                <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Nombre *</label>
+                                <input name="name" type="text" required class="dark:bg-dark-surface w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Tu nombre completo">
                             </div>
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Empresa *</label>
-                                <input name="company" type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Nombre de tu empresa">
+                                <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Empresa *</label>
+                                <input name="company" type="text" required class="dark:bg-dark-surface w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Nombre de tu empresa">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Email *</label>
-                                <input name="email" type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="tu@email.com">
+                                <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Email *</label>
+                                <input name="email" type="email" required class="dark:bg-dark-surface w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="tu@email.com">
                             </div>
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Teléfono</label>
-                                <input name="tel" type="tel" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="+34 / +55">
+                                <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Teléfono</label>
+                                <input name="tel" type="tel" class="dark:bg-dark-surface w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="+34 / +55">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Tipo de Proyecto *</label>
-                            <select name="projectType" id="projectType" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Tipo de Proyecto *</label>
+                            <select name="projectType" id="projectType" required class="dark:bg-dark-surface dark:text-dark-muted w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
                                 <option value="">Selecciona el tipo de proyecto</option>
                                 <option value="web">Desarrollo Web / E-commerce</option>
                                 <option value="mobile">Aplicación Móvil</option>
@@ -652,8 +652,8 @@
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Industria / Sector</label>
-                            <select name="sector" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Industria / Sector</label>
+                            <select name="sector" class="dark:bg-dark-surface dark:text-dark-muted w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
                                 <option value="">Selecciona tu sector</option>
                                 <option value="retail">Retail / E-commerce</option>
                                 <option value="manufacturing">Manufactura / Industrial</option>
@@ -667,8 +667,8 @@
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Presupuesto Estimado</label>
-                            <select name="budget" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Presupuesto Estimado</label>
+                            <select name="budget" class="dark:bg-dark-surface dark:text-dark-muted w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
                                 <option value="">Selecciona un rango</option>
                                 <option value="5k">€2,000 - €5,000</option>
                                 <option value="10k">€5,000 - €10,000</option>
@@ -680,8 +680,8 @@
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Plazo Deseado</label>
-                            <select name="time" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Plazo Deseado</label>
+                            <select name="time" class="dark:bg-dark-surface dark:text-dark-muted w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent">
                                 <option value="">¿Cuándo necesitas el proyecto?</option>
                                 <option value="urgent">Lo antes posible (1-2 meses)</option>
                                 <option value="normal">Plazo normal (3-4 meses)</option>
@@ -691,35 +691,35 @@
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">Descripción del Proyecto *</label>
-                            <textarea name="description" required rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Describe tu proyecto: objetivos, funcionalidades principales, usuarios objetivo, problemas que quieres resolver..."></textarea>
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">Descripción del Proyecto *</label>
+                            <textarea name="description" required rows="4" class="dark:bg-dark-surface w-full p-3 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-impsys-blue focus:border-transparent" placeholder="Describe tu proyecto: objetivos, funcionalidades principales, usuarios objetivo, problemas que quieres resolver..."></textarea>
                         </div>
                         
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2">¿Ya tienes algún sistema actual?</label>
+                            <label class="block text-gray-700 dark:text-dark-muted font-medium mb-2">¿Ya tienes algún sistema actual?</label>
                             <div class="space-y-2">
                                 <label class="flex items-center space-x-2">
                                     <input type="radio" name="currentSystem" value="none" class="text-impsys-blue">
-                                    <span>No, empezamos desde cero</span>
+                                    <span class="dark:text-dark-muted/80">No, empezamos desde cero</span>
                                 </label>
                                 <label class="flex items-center space-x-2">
                                     <input type="radio" name="currentSystem" value="basic" class="text-impsys-blue">
-                                    <span>Tengo algo básico que necesita mejoras</span>
+                                    <span class="dark:text-dark-muted/80">Tengo algo básico que necesita mejoras</span>
                                 </label>
                                 <label class="flex items-center space-x-2">
                                     <input type="radio" name="currentSystem" value="replace" class="text-impsys-blue">
-                                    <span>Quiero reemplazar un sistema existente</span>
+                                    <span class="dark:text-dark-muted/80">Quiero reemplazar un sistema existente</span>
                                 </label>
                                 <label class="flex items-center space-x-2">
                                     <input type="radio" name="currentSystem" value="integrate" class="text-impsys-blue">
-                                    <span>Necesito integrar con sistemas existentes</span>
+                                    <span class="dark:text-dark-muted/80">Necesito integrar con sistemas existentes</span>
                                 </label>
                             </div>
                         </div>
                         
                         <div class="bg-impsys-blue/5 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-900 mb-2">¿Qué incluye la propuesta gratuita?</h4>
-                            <ul class="text-sm text-gray-600 space-y-1">
+                            <h4 class="font-semibold text-gray-900 dark:text-dark-muted mb-2">¿Qué incluye la propuesta gratuita?</h4>
+                            <ul class="text-sm text-gray-600 dark:text-dark-muted/80 space-y-1">
                                 <li>✓ Análisis detallado de tus necesidades</li>
                                 <li>✓ Propuesta técnica personalizada</li>
                                 <li>✓ Estimación de tiempo y costos</li>
