@@ -113,7 +113,7 @@
 </head>
 <body class="bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text transition-colors duration-300">
     
-    <header class="bg-white/80 dark:bg-dark-surface backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-dark-border sticky top-0 z-50 transition-all transition transition-transform">
+    <header class="bg-white/80 dark:bg-dark-bg backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-dark-border sticky top-0 z-50 transition-all transition transition-transform">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 transition-all transition transition-transform">
             <div class="flex justify-between items-center py-4 flex-row gap-4 md:gap-0 transition-all transition transition-transform">
                 <div class="md:hidden" id="menuMobileButton">
@@ -126,7 +126,7 @@
                     </button>
                 </div>
                 <div class="flex items-center justify-center transition-all transition transition-transform">
-                    <img class="h-12 min-h-12 mr-1" src = "logo.svg" alt="imagotipo del ingeniero de software Victor Rivas"
+                    <img class="h-12 min-h-12 mr-1" src = "logo.svg" alt="logo del ingeniero de software Victor Rivas"
                     class="drop-shadow-lg"/>
                     <div class="flex flex-col">
                         <span class="text-2xl font-bold text-gray-900 dark:text-dark-text leading-tight">Victor Rivas</span>
@@ -157,9 +157,9 @@
                     </button>
 
                     <!-- Selector de idioma mejorado -->
-                    <div class="relative hidden md:block dark:bg-dark-card" id="langDropdown">
+                    <div class="relative hidden md:block" id="langDropdown">
                         <button id="langButton" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" aria-label="Seleccionar idioma"
-                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-gray-600 dark:text-dark-muted  hover:bg-gray-50  dark:hover:bg-dark-bg transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
+                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 dark:border-dark-border text-gray-600 dark:text-dark-muted dark:bg-dark-surface  hover:bg-gray-50  dark:hover:bg-dark-bg transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
                             <!-- Ícono de globo -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5" role="img" title="Globo terráqueo">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
@@ -217,7 +217,7 @@
                     delay-50 transition-all duration-300 transform translate-y-[-1rem] ">
                     <div class="relative inline-block" id="mobileLangDropdown">
                         <button id="mobileLangButton" aria-haspopup="true" aria-expanded="false" aria-controls="mobileLangMenu" aria-label="Seleccionar idioma"
-                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-gray-600 dark:text-dark-muted hover:bg-gray-50 dark:hover:bg-dark-bg transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
+                                class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 dark:border-dark-border text-gray-600 dark:text-dark-muted dark:bg-dark-surface hover:bg-gray-50  dark:hover:bg-dark-bg transition focus:outline-none focus:ring-2 focus:ring-impsys-blue/30 active:scale-[0.98]">
                             <!-- Ícono de globo -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5" role="img" title="Globo terráqueo">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
@@ -604,7 +604,7 @@
     </div>
 
     <!-- Project Request Modal -->
-    <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+    <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50">
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white dark:bg-dark-bg rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div class="p-8">
@@ -729,11 +729,12 @@
                         </div>
                         
                         <div class="flex gap-4">
-                            <button type="button" id="cancelProject" class="flex-1 border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors">
+                            
+                             <button id="cancelProject" type="button" class="flex-1  bg-dark-card text-white px-8 py-4 rounded-lg text-lg font-semibold glow-button relative overflow-hidden group">
                                 Cancelar
                             </button>
-                            <button type="submit" class="flex-1 bg-impsys-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-impsys-dark transition-colors">
-                                Recibir propuesta gratuita
+                            <button id="submit" class="flex-1 bg-impsys-blue text-white px-8 py-4 rounded-lg text-lg font-semibold glow-button relative overflow-hidden group">
+                                <span>Recibir propuesta gratuita</span>
                             </button>
                         </div>
                         <div class="flex justify-center my-2 hidden" id="formSending">
@@ -744,7 +745,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-center text-sm text-green-500 bg-green-100 p-3 rounded-lg hidden" id="formSuccessMessage">
+                        <div class="text-center text-sm text-green-500 dark:text-green-800 bg-green-100 p-3 rounded-lg hidden" id="formSuccessMessage">
                             ¡Gracias por contactarme! Te responderé pronto.
                         </div>
                         <div class="text-center text-sm text-red-800 bg-red-100 p-3 rounded-lg hidden" id="formErrorMessage">
@@ -752,7 +753,7 @@
                             <br>
                             Tambien puedes comunicarte conmigo directamente a mi correo o vía WhatsApp.
                         </div>
-                        <p class="text-xs text-gray-500 text-center">
+                        <p class="text-xs text-gray-500 dark:text-dark-muted text-center">
                             Al enviar este formulario, aceptas que te contacte para discutir tu proyecto. Respeto tu privacidad.
                         </p>
                     </form>
