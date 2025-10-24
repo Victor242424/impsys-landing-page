@@ -19,7 +19,10 @@
     <meta name="description" content="Desarrollo de software personalizado para emprendedores, autónomos y PyMEs en España y Brasil. Creamos sistemas web, apps móviles y ERP que impulsan tu negocio.">
     <meta name="keywords" content="desarrollo de software, apps móviles, sistemas ERP, desarrollo web, Impsys, software para PyMEs, consultoría IT, automatización de procesos">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Favicon para modo oscuro -->
+    <!--  <link  id="favicon-dark"  rel="icon" href="favicon-white.svg" type="image/x-icon" media="(prefers-color-scheme: dark)"> -->
+    <!-- Favicon por defecto (modo claro) -->
+    <link id="favicon" rel="icon" href="favicon.svg" type="image/x-icon"  media="(prefers-color-scheme: light)">
     <link rel="canonical" href="https://victor-rivas.dev/">
     <meta property="og:title" content="Victor Rivas - Desarrollo de Software para PyMEs">
     <meta property="og:description" content="Soluciones tecnológicas personalizadas que transforman tu negocio.">
@@ -30,6 +33,7 @@
 
     <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
    <!--  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"> -->
+
 
     <script rel="preload" src="https://cdn.tailwindcss.com"></script>
     <script rel="preload">
@@ -605,7 +609,7 @@
     </div>
 
     <!-- Project Request Modal -->
-    <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50">
+    <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white dark:bg-dark-bg rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div class="p-8">
@@ -932,11 +936,11 @@
                 const logoFooter = document.getElementById('logo-2');
                 logoHeader.src = newSrc;
                 logoFooter.src = newSrc;
+                document.getElementById('favicon').href = newSrc;
             }
 
             const themeToggle = document.getElementById('themeToggle');
             const html = document.documentElement;
-            console.log('Local theme: ' + localStorage.theme);
             
             // Verificar preferencia del sistema o tema guardado
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -950,7 +954,6 @@
             // Toggle manual
             themeToggle.addEventListener('click', () => {
                 const isDark = html.classList.contains('dark');
-                console.log('click');
                 html.classList.toggle('dark');
                 localStorage.theme = isDark ? 'dark' : 'light';
                 isDark ? setLogosSrc('logo.svg') : setLogosSrc('logo-white.svg');
