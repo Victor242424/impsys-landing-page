@@ -126,8 +126,9 @@
                     </button>
                 </div>
                 <div class="flex items-center justify-center transition-all transition transition-transform">
-                    <img class="h-12 min-h-12 mr-1" src = "logo.svg" alt="logo del ingeniero de software Victor Rivas"
-                    class="drop-shadow-lg"/>
+                    <picture>
+                        <img id="logo-1" src="logo.svg" class="h-12 min-h-12 mr-1 drop-shadow-lg logo-source" alt="logo del ingeniero de software Victor Rivas">
+                    </picture>
                     <div class="flex flex-col">
                         <span class="text-2xl font-bold text-gray-900 dark:text-dark-text leading-tight">Victor Rivas</span>
                         <span class="text-xs text-gray-500 dark:text-dark-muted font-medium text-center tracking-wider uppercase sm:inline">Ingeniero de Software</span>
@@ -863,7 +864,7 @@
             <div class="grid md:grid-cols-4 gap-0 sm:gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center mb-4 w-fit md:w-full mx-auto md:mx-0">
-                        <img class="h-12 min-h-12 mr-1" src = "logo.svg" loading="lazy" alt="logo del ingeniero de software Victor Rivas"
+                        <img id="logo-2" class="h-12 min-h-12 mr-1" src = "logo.svg" loading="lazy" alt="logo del ingeniero de software Victor Rivas"
                         class="drop-shadow-lg"/>
                         <div class="flex flex-col">
                             <span class="text-2xl font-bold text-gray-900 dark:text-dark-text leading-tight">Victor Rivas</span>
@@ -925,24 +926,36 @@
 <script type="text/javascript" src="js/general-functionalities.js"></script>
 <script>
         (() => {
+
+            function setLogosSrc(newSrc){
+                const logoHeader = document.getElementById('logo-1');
+                const logoFooter = document.getElementById('logo-2');
+                logoHeader.src = newSrc;
+                logoFooter.src = newSrc;
+            }
+
             const themeToggle = document.getElementById('themeToggle');
             const html = document.documentElement;
-
+            console.log('Local theme: ' + localStorage.theme);
+            
             // Verificar preferencia del sistema o tema guardado
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 html.classList.add('dark');
-                console.log('add dar');
+                setLogosSrc('logo-white.svg');
             } else {
-                console.log('remove dark');
                 html.classList.remove('dark');
+                setLogosSrc('logo.svg');
             }
 
             // Toggle manual
             themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.contains('dark');
                 console.log('click');
                 html.classList.toggle('dark');
-                localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.theme = isDark ? 'dark' : 'light';
+                isDark ? setLogosSrc('logo.svg') : setLogosSrc('logo-white.svg');
             });
+
         })();
     </script>
 </html>
