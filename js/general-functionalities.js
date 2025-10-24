@@ -92,7 +92,6 @@
         const children = menu.children;
         menu.classList.toggle('hidden');
         setTimeout(() => {
-            console.log('Menú móvil clases:', menu.className);
             menu.classList.toggle('max-h-0');
             menu.classList.toggle('opacity-0');
             menu.classList.toggle('mb-4');
@@ -111,8 +110,6 @@
     const parentDiv = document.getElementById('navBarMobileMenu');
     parentDiv.addEventListener('click', function(e) {
         if (e.target.parentElement.parentElement === parentDiv) {
-            console.log('Hijo clickeado:', e.target);
-            console.log('Contenido:', e.target.textContent);
             document.getElementById('menuMobileButton').click();
         }
     });
@@ -205,7 +202,6 @@
     document.querySelectorAll('button').forEach(button => {
         if (!button.id && !button.closest('form') && !button.closest('article')) {
             button.addEventListener('click', function() {
-                console.log(this.id)
                 if (this.textContent.includes('Portfolio')) {
                     scrollToPortfolio();
                 }
