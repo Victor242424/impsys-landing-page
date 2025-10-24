@@ -1,220 +1,220 @@
 /*     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
 
-        /* O definir manualmente */
-        @font-face {
-            font-family: 'Inter';
-            src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('ttf-variations');
-            font-weight: 100 1000;
-            font-stretch: 25% 151%;
-            font-style: normal;
-            
-        }
+/* O definir manualmente */
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('ttf-variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+    font-style: normal;
+    
+}
 
-        body { 
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            position: relative;
-        }
-        
-        /* Abstract background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(148, 163, 184, 0.02) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
+body { 
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+}
 
-        :is(.dark) body::before {
-            background-color: #0B1120;
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(17, 24, 39, 30) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(17, 24, 39, 30) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(31, 41, 55, 30) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hover-lift {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .interactive-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .interactive-card:hover::before {
-            left: 100%;
-        }
-        
-        .glow-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .glow-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-        
-        .glow-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .pulse-dot {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #2563eb;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .stat-counter {
-            transition: all 0.3s ease;
-        }
-        
-        .stat-counter:hover {
-            transform: scale(1.1);
-            color: #2563eb;
-        }
-        
-        .service-icon {
-            transition: all 0.4s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: rotate(10deg) scale(1.1);
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-        }
-        
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        :is(.dark) .text-gradient{
-            background: #2563eb;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .interactive-logo {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-        
-        .interactive-logo:hover {
-            transform: rotate(5deg) scale(1.1);
-            filter: drop-shadow(0 8px 25px rgba(37, 99, 235, 0.4));
-        }
-        
-        .interactive-logo svg {
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-logo:hover svg {
-            animation: logoGlow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes logoGlow {
-            0% { filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.5)); }
-            100% { filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.8)); }
-        }
+/* Abstract background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(148, 163, 184, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
 
-        .text-gradient {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+:is(.dark) body::before {
+    background-color: #0B1120;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(17, 24, 39, 30) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(17, 24, 39, 30) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(31, 41, 55, 30) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.interactive-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.interactive-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.interactive-card:hover::before {
+    left: 100%;
+}
+
+.glow-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.glow-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.glow-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.pulse-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.stat-counter {
+    transition: all 0.3s ease;
+}
+
+.stat-counter:hover {
+    transform: scale(1.1);
+    color: #2563eb;
+}
+
+.service-icon {
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(10deg) scale(1.1);
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+:is(.dark) .text-gradient{
+    background: #2563eb;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.interactive-logo {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.interactive-logo:hover {
+    transform: rotate(5deg) scale(1.1);
+    filter: drop-shadow(0 8px 25px rgba(37, 99, 235, 0.4));
+}
+
+.interactive-logo svg {
+    transition: all 0.3s ease;
+}
+
+.interactive-logo:hover svg {
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.5)); }
+    100% { filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.8)); }
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
