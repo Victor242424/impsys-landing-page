@@ -66,19 +66,19 @@
         });
 
         // Close modal functionality
-        document.getElementById('closeModal').addEventListener('click', function() {
+/*         document.getElementById('closeModal').addEventListener('click', function() {
             document.getElementById('portfolioModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         });
-
+ */
         // Close modal when clicking outside
-        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+   /*      document.getElementById('portfolioModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 this.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             }
         });
-
+ */
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 })();
